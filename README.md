@@ -30,7 +30,7 @@ Constraints:
 
 最直覺的作法是輪詢每次以第i天起點找到第一個大於 temperature[i] 的 index 做相減
 
-這種作法需要 O(n^2) 因為每次都需要 從 i 找到 n-1所以需要 找 n-i 次有 n 個
+這種作法需要 O($n^2$) 因為每次都需要 從 i 找到 n-1所以需要 找 n-i 次有 n 個
 
 要降低每次尋找的次數必須要把每次經過的值沒有處理過紀錄下來
 
@@ -40,7 +40,7 @@ Constraints:
 
 所以可以透過 stack 來做這件事
 
-這樣因為每次找到大於 element 都只需要花費 O(1) , 可以將複雜度降低到 O(1)
+這樣因為每次找到大於 element 都只需要花費 O(1) , 可以將複雜度降低到 O(n)
 
 ## 透過 stack 來降低複雜度的解法
 
@@ -75,6 +75,11 @@ func dailyTemperatures(temperatures []int) []int {
   return answers
 }
 ```
+
+## 困難點
+
+1. 要想出怎麼去節省搜尋時間
+2. 對 monotonic stack 概念不夠熟
 
 # Solve Points
 
